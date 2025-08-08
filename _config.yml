@@ -11,7 +11,7 @@ locale                   : "en-US"
 site_theme               : "default"
 title                    : "Davy Deng"
 title_separator          : "-"
-#name                     : &name "Davy Deng"
+name                     : ""
 description              : &description "personal description"
 url                      : https://davydeng1.github.io
 baseurl                  : ""
@@ -23,7 +23,7 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Davy Deng"
+  name             : ""
   pronouns         : "he/him"  
   bio              : "Working on technologies to enable whole brain emulation for possible digital immortality in the future"
   location         : "Boston/Cambridge, MA"
