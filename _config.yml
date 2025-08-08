@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "Image.jpeg"
   name             : ""
   pronouns         : "he/him"  
   bio              : "Working on technologies to enable whole brain emulation for possible digital immortality in the future"
