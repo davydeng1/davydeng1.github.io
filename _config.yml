@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default"
+site_theme               : "dark"
 title                    : "Davy Deng"
 title_separator          : "-"
 name                     : ""
@@ -24,8 +24,8 @@ author:
   # Biographic information
   avatar           : "Image.jpeg"
   name             : ""
-  pronouns         : "he/him"  
-  bio              : "Working on technologies to enable whole brain emulation for possible digital immortality in the future"
+  pronouns         : "He/Him"  
+  bio              : "Working on technologies to enable whole brain emulation for possible digital immortality in the future."
   location         : "Boston/Cambridge, MA"
   school           : "Harvard-MIT HST"
   uri              : "https://davydeng1.github.io"
