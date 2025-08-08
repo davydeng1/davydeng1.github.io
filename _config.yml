@@ -24,10 +24,10 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Davy Deng"
-  pronouns         : # example: "she/her"  
+  pronouns         : "he/him"  
   bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  location         : "Boston/Cambridge, MA"
+  employer         : "Harvard University; Massachusetts Institute of Technology"
   uri              : "https://davydeng1.github.io"
   email            : "davy@mit.edu" 
 
