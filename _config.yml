@@ -13,7 +13,7 @@ title                    : "Your Name / Site Title"
 title_separator          : "-"
 name                     : &name "Davy Deng"
 description              : &description "personal description"
-url                      : https://davydeng1.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : https://davydeng1.github.io
 baseurl                  : ""
 repository               : "academicpages/academicpages.github.io"
 
@@ -25,11 +25,12 @@ author:
   avatar           : "profile.png"
   name             : "Davy Deng"
   pronouns         : "he/him"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Working on technologies to enable whole brain emulation for possible digital immortality in the future"
   location         : "Boston/Cambridge, MA"
-  employer         : "Harvard University; Massachusetts Institute of Technology"
+  School           : "Harvard University"
+  School           : "Massachusetts Institute of Technology"
   uri              : "https://davydeng1.github.io"
-  email            : "davy@mit.edu" 
+  email            : "davy at mit.edu; davy at hst.harvard.edu" 
 
   # Academic websites
   academia         : # URL
