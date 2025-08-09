@@ -12,7 +12,7 @@ classes: publications-page   # ← add this
 .wordwrap { max-width: 1024px; margin: 0 auto .75rem; }
 
 .grid__wrapper.publications-grid{
-  max-width: 1024px;              /* widen the whole grid */
+  max-width: 600px;              /* widen the whole grid */
   margin: 0 auto 1rem;
   display: grid;
   gap: 1rem;
@@ -40,59 +40,42 @@ classes: publications-page   # ← add this
 </style>
 
 
-
 <style>
-/* Wider intro to match the grid */
-.wordwrap { max-width: 1100px; margin: 0 auto .75rem; }
+/* intro width matches the grid below */
+.wordwrap{ max-width: 1100px; margin: 0 auto .75rem; }
 
-/* Centered, roomy 3-up layout using flex (more forgiving than the theme grid) */
+/* centered, wide 3-column grid with sensible min column width */
 .grid__wrapper.publications-grid{
   max-width: 1100px;
   margin: 0 auto 1rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 1.25rem;
-  justify-content: center;
+  grid-template-columns: repeat(3, minmax(340px, 1fr)); /* ← wider columns */
+  align-items: start;
 }
 
-/* Make each card actually fill a decent column width */
-.grid__wrapper.publications-grid > *{         /* catches .grid__item from the include */
-  flex: 1 1 340px;                            /* min column ~340px; grows as space allows */
-  max-width: 1px;                             /* lets flex grow evenly; prevents “auto” shrink quirks */
-}
+/* make each grid item fill its column */
+.grid__wrapper.publications-grid > *{ width: 100%; }
 
-/* Ensure the article stretches within its flex item */
-.publications-grid .archive__item{ width: 100%; }
-
-/* Teaser box size */
-.publications-grid .archive__item-teaser{
-  height: 160px;                              /* adjust to taste */
-  margin: 0 0 .6rem 0;
-}
+/* teaser box sizing */
+.publications-grid .archive__item-teaser{ height: 160px; margin: 0 0 .6rem 0; }
 .publications-grid .archive__item-teaser img{
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain;                        /* use 'cover' for cropped fill */
+  object-fit: contain;
   display: block;
 }
 
-/* Titles/excerpts should wrap normally (no ultra-narrow columns) */
-.publications-grid .archive__item-title,
-.publications-grid .archive__item-excerpt{
-  width: 100%;
-  max-width: none;
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: anywhere;                    /* long words still wrap */
+/* responsive: drop to 2 then 1 column */
+@media (max-width: 1120px){
+  .grid__wrapper.publications-grid{
+    grid-template-columns: repeat(2, minmax(340px, 1fr));
+  }
 }
-
-/* Responsive: drop to 2 and 1 columns naturally via flex-basis */
-@media (max-width: 900px){
-  .grid__wrapper.publications-grid{ gap: 1rem; }
-  .grid__wrapper.publications-grid > *{ flex-basis: 320px; }
-}
-@media (max-width: 680px){
-  .grid__wrapper.publications-grid > *{ flex-basis: 100%; }
+@media (max-width: 720px){
+  .grid__wrapper.publications-grid{
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
