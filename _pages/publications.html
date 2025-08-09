@@ -5,73 +5,51 @@ permalink: /publications/
 author_profile: true
 ---
 
-
 <style>
-/* shrink any images that appear inside the excerpt block on archive pages */
-.layout--archive .archive__item-excerpt img {
-  width: 64px !important;      /* set the actual width */
-  height: auto !important;
-  display: inline-block;
-}
+/* same line width for intro + grid */
+.wordwrap { max-width: 720px; margin: 0 auto .75rem; }
 
-.layout--archive .archive__item-excerpt { text-align: center; }
-</style>
-
-<style>
-/* 1) Make the intro sentence narrower and centered */
-.layout--archive .wordwrap{
-  max-width: 720px;   /* try 600–720px; adjust to taste */
-  margin: 0 auto 0.75rem;
-  line-height: 1.5;
-  text-align: left;   /* or center if you prefer */
-}
-
-/* 2) Tighten vertical space on this page */
-.layout--archive .grid__wrapper{ 
-  gap: 0.75rem;                 /* smaller gaps between cards */
-  margin-bottom: 0.25rem;       /* less space under the grid */
-}
-.layout--archive .archive{ margin-bottom: 0; }
-.layout--archive .page__content{ padding-bottom: 0; margin-bottom: 0; }
-
-.layout--archive .page__inner-wrap{ padding-bottom: 0; }
-
-</style>
-
-<style>
-/* Center the grid and match the intro width */
-.layout--archive .grid__wrapper{
-  max-width: 720px;                  /* match .wordwrap */
-  margin: 0 auto 0.5rem;             /* centers the whole grid block */
+/* our own centered, 3-col grid */
+.pub-grid{
+  max-width: 720px;              /* match .wordwrap */
+  margin: 0 auto .5rem;          /* centers the grid under the intro */
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));  /* 3 columns on desktop */
-  justify-items: center;             /* center items in their columns */
-  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: .75rem;
+  justify-items: center;
 }
 
-/* Make each card use its column width, and the teaser fill the card */
-.layout--archive .grid__wrapper .archive__item{ width: 100%; }
-.layout--archive .grid__wrapper .archive__item-teaser{
+/* let each card fill its column */
+.pub-grid .archive__item{ width: 100%; text-align: center; }
+
+/* clamp teaser box size; image scales inside */
+.pub-grid .archive__item-teaser{
   width: 100%;
-  height: 120px;                     /* adjust to taste */
-  margin: 0 auto 0.5rem;
+  height: 120px;                 /* adjust to taste */
+  margin: 0 auto .5rem;
 }
-.layout--archive .grid__wrapper .archive__item-teaser img{
+.pub-grid .archive__item-teaser img{
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain;               /* or 'cover' to crop-fill */
+  object-fit: contain;           /* use 'cover' to crop-fill */
   display: block;
 }
+
+/* trim bottom space on this page */
+.page__content, .page__inner-wrap { padding-bottom: 0; margin-bottom: 0; }
 </style>
 
-
 {% if site.author.googlescholar %}
-  <div class="wordwrap">Below is a summary of some of the studies I have contributed to. You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">
+    Below is a summary of some of the studies I have contributed to.
+    You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.
+  </div>
 {% endif %}
 
 {% include base_path %}
 
-{% for post in site.publications %}
+<div class="pub-grid">
+  {% for post in site.publications %}
     {% include archive-single-talk.html type="grid" %}
-{% endfor %}
-
+  {% endfor %}
+</div>
