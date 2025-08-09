@@ -8,24 +8,37 @@ classes: publications-page   # ← add this
 ---
 
 <style>
-/* wider intro + grid */
+/* Wider grid + columns that actually stretch */
 .wordwrap { max-width: 1024px; margin: 0 auto .75rem; }
 
 .grid__wrapper.publications-grid{
-  max-width: 1024px;         /* was 720px */
+  max-width: 1024px;              /* widen the whole grid */
   margin: 0 auto 1rem;
-  gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  justify-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));  /* <-- roomy columns */
+  justify-items: stretch;          /* children fill their columns */
+  align-items: start;
 }
 
-/* slightly taller teaser to balance the wider cards */
-.publications-grid .archive__item-teaser{ height: 150px; }
+/* make each card stretch to the column width */
+.publications-grid .archive__item{ width: 100%; }
+
+/* teaser stays tidy */
+.publications-grid .archive__item-teaser{ height: 150px; margin: 0 0 .5rem 0; }
 .publications-grid .archive__item-teaser img{
   width: 100% !important; height: 100% !important; object-fit: contain; display:block;
 }
+
+/* responsive fallbacks */
+@media (max-width: 980px){
+  .grid__wrapper.publications-grid{ grid-template-columns: repeat(2, minmax(320px, 1fr)); }
+}
+@media (max-width: 680px){
+  .grid__wrapper.publications-grid{ grid-template-columns: 1fr; }
+}
 </style>
+
 
 
 
