@@ -47,10 +47,16 @@ classes: publications-page   # ← add this
 }
 </style>
 
+<style>
+/* make intro + grid same width and left-aligned under the title */
+.publications-page .wordwrap{ max-width:800px; margin:0 0 .75rem 0; }
+.publications-page .grid__wrapper.publications-grid{ max-width:800px; margin:0 0 1rem 0; }
+</style>
+
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">
-    Below is a summary of some of the studies I have contributed to.
+  Below is a summary of some of the studies I have contributed to.
     You can also find my articles on my <a href="{{site.author.googlescholar}}">Google Scholar profile</a>.
   </div>
 {% endif %}
