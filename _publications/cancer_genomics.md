@@ -11,7 +11,7 @@ How do we leverage the increasing amount of genetics and genomics data to better
 
 
 <p align="center">
-  <img src="/images/Cancer.jpeg" alt="cancer" width="420">
+  <img src="/images/cancer.jpeg" alt="cancer" width="420">
   <br>
   <em>Figure 1. Genomic Signatures of Glioblastoma.</em>
 </p>
