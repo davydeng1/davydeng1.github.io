@@ -8,6 +8,23 @@ classes: talks-page
 entries_layout: list
 
 ---
+<style>
+/* Smaller teaser cards on the publications archive page */
+.layout--archive .grid__wrapper .archive__item-teaser {
+  width: 180px !important;       /* <-- pick your width */
+  height: 120px !important;      /* optional: fixes card height */
+  margin: 0 auto 0.5rem;
+}
+.layout--archive .grid__wrapper .archive__item-teaser img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;           /* use 'cover' if you prefer a cropped fill */
+  display: block;
+}
+
+/* (optional) keep card text centered under the smaller teaser */
+.layout--archive .grid__wrapper .archive__item { text-align: center; }
+</style>
 
 {% if site.talkmap_link == true %}
 
