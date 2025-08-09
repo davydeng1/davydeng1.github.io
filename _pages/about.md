@@ -3,6 +3,7 @@ permalink: /
 title: ""
 author_profile: true
 classes: wide
+layout: single
 redirect_from: 
   - /about/
   - /about.html
