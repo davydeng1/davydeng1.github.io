@@ -1,5 +1,5 @@
 ---
-title: "Digital Health in Psychiatric Disorders"
+title: "Digital Health for Psychiatric Disorders"
 collection: publications
 category: manuscripts
 permalink: /publication/psychiatric
