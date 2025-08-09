@@ -1,5 +1,5 @@
 ---
-title: "Cancer Genomics"
+title: "Cancer Genomics in the Brain"
 collection: publications
 category: manuscripts
 permalink: /publication/cancer_genomics
