@@ -3,37 +3,53 @@ layout: archive
 title: "Ongoing Research Projects"
 permalink: /talks/
 author_profile: true
+classes: publications-page   # ← add this
+
 ---
 <style>
-/* Smaller teaser cards on the publications archive page */
-.layout--archive .grid__wrapper .archive__item-teaser {
-  width: 180px !important;       /* <-- pick your width */
-  height: 120px !important;      /* optional: fixes card height */
-  margin: 0 auto 0.5rem;
+/* intro width matches the grid below */
+.wordwrap{ max-width: 960px; margin: 0 auto 3.5rem; }
+
+/* centered, wide 3-column grid with sensible min column width */
+.grid__wrapper.publications-grid{
+  max-width: 800px !important;
+  margin-left: 20px !important;   /* tune this: 60–100px for fine alignment */
+  margin-right: auto !important;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); /* ← wider columns */
+  align-items: start;
 }
-.layout--archive .grid__wrapper .archive__item-teaser img {
+
+/* make each grid item fill its column */
+.grid__wrapper.publications-grid > *{ width: 100%; }
+
+/* teaser box sizing */
+.publications-grid .archive__item-teaser{ height: 220px; margin: 0 0 .6rem 0; }
+.publications-grid .archive__item-teaser img{
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain;           /* use 'cover' if you prefer a cropped fill */
+  object-fit: cover !important;
   display: block;
 }
 
-/* (optional) keep card text centered under the smaller teaser */
-.layout--archive .grid__wrapper .archive__item { text-align: center; }
-</style>
-
-<style>
-/* shrink any images that appear inside the excerpt block on archive pages */
-.layout--archive .archive__item-excerpt img {
-  width: 64px !important;      /* set the actual width */
-  height: auto !important;
-  display: inline-block;
+/* responsive: drop to 2 then 1 column */
+@media (max-width: 1120px){
+  .grid__wrapper.publications-grid{
+    grid-template-columns: repeat(2, minmax(340px, 1fr));
+  }
 }
-/* (optional) center the excerpt content */
-.layout--archive .archive__item-excerpt { text-align: center; }
+@media (max-width: 720px){
+  .grid__wrapper.publications-grid{
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html type="grid" %}
-{% endfor %}
+<div class="grid__wrapper publications-grid">
+  {% for post in site.talks reversed %}
+    {% include archive-single-talk.html type="grid" %}
+  {% endfor %}
+</div>
+
