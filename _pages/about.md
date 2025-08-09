@@ -7,6 +7,16 @@ redirect_from:
   - /about/
   - /about.html
 ---
+<!-- widen just this page's content column -->
+<style>
+  /* hit the main wrappers used by Minimal Mistakes "single" layout */
+  #main article.page,
+  #main .page,
+  #main .page__content {
+    max-width: 1040px;   /* tweak to taste: 960–1140px works well */
+  }
+</style>
+
 I am a third-year joint doctoral student at the Harvard-MIT Health Sciences and Technology (HST) program as a [MathWorks Fellow](https://engineering.mit.edu/students/graduate-student-fellowships/mathworks-fellows/) at MIT, where I am fortunate to be co-advised by [Prof. Ed Boyden](https://synthneuro.org/) and [Prof. Gabriel Kreiman](https://klab.tch.harvard.edu/). Most of my time is spent developing technologies towards whole brain emulation (WBE), with C. elegans as an important and tractable first steps and will serve as a groundtruth for scaling up to mammalian and human WBE in the future.
 
 
