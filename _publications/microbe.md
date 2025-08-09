@@ -1,5 +1,5 @@
 ---
-title: "To Breathe or Not to Breathe - the secret of anaerobic pathogens"
+title: "To Breathe or Not to Breathe - The Secret of Anaerobic Pathogens"
 collection: publications
 category: manuscripts
 permalink: /publication/microbe
