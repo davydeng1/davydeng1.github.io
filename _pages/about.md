@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: /
-title: "Davy Deng"
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
