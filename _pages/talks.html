@@ -26,6 +26,17 @@ entries_layout: list
 .layout--archive .grid__wrapper .archive__item { text-align: center; }
 </style>
 
+<style>
+/* shrink any images that appear inside the excerpt block on archive pages */
+.layout--archive .archive__item-excerpt img {
+  width: 64px !important;      /* set the actual width */
+  height: auto !important;
+  display: inline-block;
+}
+/* (optional) center the excerpt content */
+.layout--archive .archive__item-excerpt { text-align: center; }
+</style>
+
 
 {% for post in site.talks reversed %}
   {% include archive-single-talk.html type="grid" %}
