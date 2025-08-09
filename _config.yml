@@ -9,8 +9,8 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "dark"
-title                    : ""
-title_separator          : "-"
+title                    : "Davy Deng"
+title_separator          : ""
 name                     : ""
 description              : &description "personal description"
 url                      : https://davydeng1.github.io
