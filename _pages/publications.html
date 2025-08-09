@@ -5,21 +5,16 @@ permalink: /publications/
 author_profile: true
 ---
 
+
 <style>
-/* Shrink teaser images only on this archive page */
-.layout--archive .archive__item-teaser,
-.layout--archive .archive__item-thumbnail {
-  width: 64px !important;      /* <-- change this number to taste */
-  max-width: 100%;
-  margin: 0 auto;
-}
-.layout--archive .archive__item-teaser img,
-.layout--archive .archive__item-thumbnail img {
-  width: 100% !important;
+/* shrink any images that appear inside the excerpt block on archive pages */
+.layout--archive .archive__item-excerpt img {
+  width: 64px !important;      /* set the actual width */
   height: auto !important;
-  display: block;
-  object-fit: contain;
+  display: inline-block;
 }
+/* (optional) center the excerpt content */
+.layout--archive .archive__item-excerpt { text-align: center; }
 </style>
 
 {% if site.author.googlescholar %}
