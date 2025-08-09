@@ -1,5 +1,5 @@
 ---
-title: "Worm Expansion Sequencing (WormSeq) as a scalable tool for molecularly annotated connectome (MAC)"
+title: "Worm Expansion Sequencing (WormSeq) as a Scalable Tool for Molecularly Annotated Connectome (MAC)"
 collection: talks
 type: "Talk"
 permalink: /talks/ExSeq
