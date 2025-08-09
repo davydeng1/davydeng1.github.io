@@ -35,6 +35,29 @@ author_profile: true
 .layout--archive .archive__item-excerpt { text-align: center; }
 </style>
 
+<style>
+/* 1) Make the intro sentence narrower and centered */
+.layout--archive .wordwrap{
+  max-width: 720px;   /* try 600–720px; adjust to taste */
+  margin: 0 auto 0.75rem;
+  line-height: 1.5;
+  text-align: left;   /* or center if you prefer */
+}
+
+/* 2) Tighten vertical space on this page */
+.layout--archive .grid__wrapper{ 
+  gap: 0.75rem;                 /* smaller gaps between cards */
+  margin-bottom: 0.25rem;       /* less space under the grid */
+}
+.layout--archive .archive{ margin-bottom: 0; }
+.layout--archive .page__content{ padding-bottom: 0; margin-bottom: 0; }
+
+/* If you still see a big pad at the very bottom, uncomment this:
+.layout--archive .page__inner-wrap{ padding-bottom: 0; }
+*/
+</style>
+
+
 {% if site.author.googlescholar %}
   <div class="wordwrap">Below is a summary of some of the studies I have contributed to. You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
