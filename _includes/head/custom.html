@@ -21,4 +21,13 @@
   .page__content figure.img-64 figcaption { font-style: italic; }
 </style>
 
+<style>
+  /* clamps any wrapped image to a fixed max width on archive/single pages */
+  .img-clamp { max-width: 64px; margin: 0 auto; text-align: center; }
+  .img-clamp > img { display:block; width:100% !important; height:auto !important; }
+  /* cover both regular content pages and archive listings */
+  .page__content .img-clamp, .archive .img-clamp { max-width: 64px; }
+</style>
+
+
 <!-- end custom head snippets -->
