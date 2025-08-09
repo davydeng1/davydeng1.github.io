@@ -1,31 +1,16 @@
-/* Make list teasers behave nicely */
-.archive .list__item .archive__item-teaser img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Optional: reduce gap under the teaser */
-.archive .list__item .archive__item-teaser { margin-bottom: 0.5rem; }
-
-/* Keep text left-aligned in archives */
-.archive .archive__item,
-.archive .archive__item-title,
-.archive .archive__item-excerpt { text-align: left; }
-
-/* Talks page: show only two lines of excerpt, then the image */
+/* Talks page: exactly two lines of excerpt */
 .talks-page .list__item .archive__item-excerpt {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;   /* <-- two lines */
+  -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-bottom: 0.5rem;    /* space before the image */
+  margin-bottom: 0.5rem; /* space before image */
 }
 
-/* Talks page: keep teaser below excerpt, but not too wide */
+/* Talks page: teaser BELOW excerpt, limited width */
 .talks-page .list__item .archive__item-teaser {
-  max-width: 560px;           /* <- adjust to taste: 480–640px works well */
-  margin: 0.5rem 0 1rem 0;    /* space before/after the image */
+  max-width: 520px;            /* adjust to taste: 420–560px works well */
+  margin: 0.5rem 0 1rem 0;     /* spacing */
 }
 .talks-page .list__item .archive__item-teaser img {
   display: block;
@@ -34,5 +19,12 @@
   object-fit: contain;
 }
 
-/* Safety: no horizontal overflow from archive items */
-.talks-page .list__item .archive__item { overflow-x: hidden; }
+/* Keep archive text left-aligned on this page only */
+.talks-page .archive__item,
+.talks-page .archive__item-title,
+.talks-page .archive__item-excerpt {
+  text-align: left;
+}
+
+/* Safety: prevent accidental horizontal overflow on this page */
+.talks-page { overflow-x: hidden; }
