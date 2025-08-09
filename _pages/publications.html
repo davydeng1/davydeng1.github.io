@@ -8,19 +8,25 @@ classes: publications-page   # ← add this
 ---
 
 <style>
-.wordwrap { max-width: 1100px; margin: 0 auto .75rem; }
+/* wider intro + grid */
+.wordwrap { max-width: 1024px; margin: 0 auto .75rem; }
 
 .grid__wrapper.publications-grid{
-  max-width: 1100px;
+  max-width: 1024px;         /* was 720px */
   margin: 0 auto 1rem;
   gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
   justify-items: center;
 }
-.publications-grid .archive__item-teaser{ height: 160px; }
-.publications-grid .archive__item-teaser img{ width:100% !important; height:100% !important; object-fit:contain; display:block; }
+
+/* slightly taller teaser to balance the wider cards */
+.publications-grid .archive__item-teaser{ height: 150px; }
+.publications-grid .archive__item-teaser img{
+  width: 100% !important; height: 100% !important; object-fit: contain; display:block;
+}
 </style>
+
 
 
 
