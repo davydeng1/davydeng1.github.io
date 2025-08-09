@@ -1,6 +1,7 @@
 ---
+layout: single
 permalink: /
-title: ""
+title: "Davy Deng"
 author_profile: true
 classes: home-page
 redirect_from: 
