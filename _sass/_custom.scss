@@ -28,3 +28,16 @@
 
 /* Safety: prevent accidental horizontal overflow on this page */
 .talks-page { overflow-x: hidden; }
+
+/* Homepage: make the content column wider to fill the right gutter */
+.home-page .page,
+.home-page .page__content {
+  max-width: 1040px;   /* tweak 960–1120 to taste */
+}
+
+/* Make sure images don’t blow past the column */
+.home-page .page__content img {
+  max-width: 100%;
+  height: auto;
+}
+
