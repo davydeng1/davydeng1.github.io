@@ -12,3 +12,19 @@
 .archive .archive__item,
 .archive .archive__item-title,
 .archive .archive__item-excerpt { text-align: left; }
+
+/* Talks page: show only two lines of excerpt, then the image */
+.talks-page .list__item .archive__item-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;   /* <-- two lines */
+  overflow: hidden;
+  margin-bottom: 0.5rem;    /* space before the image */
+}
+
+/* Teaser below the excerpt should size nicely */
+.talks-page .list__item .archive__item-teaser img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
