@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "dark"
-title                    : "Davy Deng"
+title                    : ""
 title_separator          : "-"
 name                     : ""
 description              : &description "personal description"
