@@ -41,3 +41,17 @@
   height: auto;
 }
 
+/* Homepage only: expand the content column to use the space right of the sidebar */
+.home-page .page {
+  width: calc(100% - 320px); /* ~sidebar + gutter; tweak 300–360px to taste */
+  max-width: none;           /* remove MM's default cap */
+}
+
+.home-page .page__content {
+  max-width: none;           /* ensure inner content isn't capped */
+}
+
+.home-page .page__content img {
+  max-width: 100%;
+  height: auto;
+}
