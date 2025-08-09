@@ -15,7 +15,8 @@ classes: publications-page   # ← add this
 /* centered, wide 3-column grid with sensible min column width */
 .grid__wrapper.publications-grid{
   max-width: 800px !important;
-  margin: 0 !important;
+  margin-left: 80px !important;   /* tune this: 60–100px for fine alignment */
+  margin-right: auto !important;
   display: grid;
   gap: 1.25rem;
   grid-template-columns: repeat(3, minmax(200px, 1fr)); /* ← wider columns */
