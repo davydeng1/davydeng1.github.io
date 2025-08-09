@@ -3,7 +3,9 @@ layout: single
 permalink: /
 title: "Davy Deng"
 author_profile: true
-classes: home-page
+toc: true
+toc_label: "On this page"
+toc_sticky: true
 redirect_from: 
   - /about/
   - /about.html
