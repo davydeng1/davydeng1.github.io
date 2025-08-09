@@ -3,35 +3,37 @@ layout: archive
 title: "Publications & Completed Research Projects"
 permalink: /publications/
 author_profile: true
+classes: publications-page   # ← add this
+
 ---
 
 <style>
-/* keep the intro line reasonable and centered */
-.wordwrap { max-width: 720px; margin: 0 auto .75rem; }
-
-/* use the theme's grid wrapper, but clamp and center it */
-.grid__wrapper.publications-grid {
-  max-width: 720px;       /* match the intro width */
-  margin: 0 auto 1rem;    /* centers the whole grid */
-  gap: .75rem;            /* tighter spacing */
+/* Make the intro line start right under the title */
+.publications-page .page__title{ margin-bottom:.5rem; }   /* tighten H1 → intro gap */
+.publications-page .wordwrap{
+  max-width:720px;        /* same width as the grid */
+  margin:0 auto .75rem;   /* centered under the title */
+  text-align:center;      /* or left if you prefer */
 }
 
-/* make the teaser box smaller and consistent */
-.publications-grid .archive__item-teaser {
-  width: 100%;
-  height: 120px;          /* adjust to taste (e.g., 100–140px) */
-  margin: 0 0 .5rem 0;
-}
-.publications-grid .archive__item-teaser img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain;    /* use 'cover' if you prefer a cropped fill */
-  display: block;
+/* Center and clamp the grid under the intro */
+.grid__wrapper.publications-grid{
+  max-width:720px;        /* match .wordwrap */
+  margin:0 auto 1rem;     /* centers the grid */
+  gap:.75rem;
 }
 
-/* tidy bottom whitespace on this page */
-.page__inner-wrap, .page__content { padding-bottom: 0; margin-bottom: 0; }
+/* Smaller, consistent teaser box */
+.publications-grid .archive__item-teaser{ height:120px; margin:0 0 .5rem 0; }
+.publications-grid .archive__item-teaser img{
+  width:100% !important; height:100% !important; object-fit:contain; display:block;
+}
+
+/* Trim bottom whitespace on this page */
+.publications-page .page__inner-wrap,
+.publications-page .page__content{ padding-bottom:0; margin-bottom:0; }
 </style>
+
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">
