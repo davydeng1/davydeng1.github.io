@@ -5,12 +5,28 @@ permalink: /publications/
 author_profile: true
 ---
 
+<style>
+/* Shrink teaser images only on this archive page */
+.layout--archive .archive__item-teaser,
+.layout--archive .archive__item-thumbnail {
+  width: 320px !important;      /* <-- change this number to taste */
+  max-width: 100%;
+  margin: 0 auto;
+}
+.layout--archive .archive__item-teaser img,
+.layout--archive .archive__item-thumbnail img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  object-fit: contain;
+}
+</style>
+
 {% if site.author.googlescholar %}
   <div class="wordwrap">Below is a summary of some of the studies I have contributed to. You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
 {% include base_path %}
-
 
 {% for post in site.publications %}
     {% include archive-single-talk.html type="list" %}
