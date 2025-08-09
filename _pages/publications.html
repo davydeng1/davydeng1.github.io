@@ -5,24 +5,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-<style>
-/* Smaller teaser cards on the publications archive page */
-.layout--archive .grid__wrapper .archive__item-teaser {
-  width: 180px !important;       /* <-- pick your width */
-  height: 120px !important;      /* optional: fixes card height */
-  margin: 0 auto 0.5rem;
-}
-.layout--archive .grid__wrapper .archive__item-teaser img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain;           /* use 'cover' if you prefer a cropped fill */
-  display: block;
-}
-
-/* (optional) keep card text centered under the smaller teaser */
-.layout--archive .grid__wrapper .archive__item { text-align: center; }
-</style>
-
 
 <style>
 /* shrink any images that appear inside the excerpt block on archive pages */
@@ -54,6 +36,32 @@ author_profile: true
 
 .layout--archive .page__inner-wrap{ padding-bottom: 0; }
 
+</style>
+
+<style>
+/* Center the grid and match the intro width */
+.layout--archive .grid__wrapper{
+  max-width: 720px;                  /* match .wordwrap */
+  margin: 0 auto 0.5rem;             /* centers the whole grid block */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));  /* 3 columns on desktop */
+  justify-items: center;             /* center items in their columns */
+  gap: 0.75rem;
+}
+
+/* Make each card use its column width, and the teaser fill the card */
+.layout--archive .grid__wrapper .archive__item{ width: 100%; }
+.layout--archive .grid__wrapper .archive__item-teaser{
+  width: 100%;
+  height: 120px;                     /* adjust to taste */
+  margin: 0 auto 0.5rem;
+}
+.layout--archive .grid__wrapper .archive__item-teaser img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;               /* or 'cover' to crop-fill */
+  display: block;
+}
 </style>
 
 
