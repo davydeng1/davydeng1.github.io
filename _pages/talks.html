@@ -2,7 +2,7 @@
 layout: archive
 title: "Ongoing Research Projects"
 permalink: /talks/
-author_profile: false
+author_profile: true
 classes: wide
 show_excerpts: true
 ---
@@ -14,5 +14,5 @@ show_excerpts: true
 {% endif %}
 
 {% for post in site.talks reversed %}
-  {% include archive-single-talk.html type="list" %}
+  {% include archive-single-talk.html type="grid" %}
 {% endfor %}
