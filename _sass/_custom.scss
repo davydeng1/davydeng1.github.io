@@ -22,9 +22,17 @@
   margin-bottom: 0.5rem;    /* space before the image */
 }
 
-/* Teaser below the excerpt should size nicely */
+/* Talks page: keep teaser below excerpt, but not too wide */
+.talks-page .list__item .archive__item-teaser {
+  max-width: 560px;           /* <- adjust to taste: 480–640px works well */
+  margin: 0.5rem 0 1rem 0;    /* space before/after the image */
+}
 .talks-page .list__item .archive__item-teaser img {
+  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
 }
+
+/* Safety: no horizontal overflow from archive items */
+.talks-page .list__item .archive__item { overflow-x: hidden; }
