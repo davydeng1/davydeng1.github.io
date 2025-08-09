@@ -29,28 +29,19 @@
 /* Safety: prevent accidental horizontal overflow on this page */
 .talks-page { overflow-x: hidden; }
 
-/* Homepage: make the content column wider to fill the right gutter */
-.home-page .page,
-.home-page .page__content {
-  max-width: 1040px;   /* tweak 960–1120 to taste */
-}
+/* Homepage only: remove right TOC column and expand content to use that space */
+.home-page .sidebar__right { display: none; }
 
-/* Make sure images don’t blow past the column */
-.home-page .page__content img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Homepage only: expand the content column to use the space right of the sidebar */
 .home-page .page {
-  width: calc(100% - 320px); /* ~sidebar + gutter; tweak 300–360px to taste */
-  max-width: none;           /* remove MM's default cap */
+  width: 100%;       /* fill the available row next to the author sidebar */
+  max-width: none;   /* override theme caps */
 }
 
 .home-page .page__content {
-  max-width: none;           /* ensure inner content isn't capped */
+  max-width: none;   /* keep inner content from being capped */
 }
 
+/* images on the homepage shouldn't overflow */
 .home-page .page__content img {
   max-width: 100%;
   height: auto;
