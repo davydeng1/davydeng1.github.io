@@ -8,30 +8,23 @@ classes: publications-page   # ← add this
 ---
 
 <style>
-/* Make the intro line start right under the title */
-.publications-page .page__title{ margin-bottom:.5rem; }   /* tighten H1 → intro gap */
-.publications-page .wordwrap{
-  max-width:720px;        /* same width as the grid */
-  margin:0 auto .75rem;   /* centered under the title */
-  text-align:center;      /* or left if you prefer */
-}
+/* wider intro + grid */
+.wordwrap { max-width: 1024px; margin: 0 auto .75rem; }
 
-/* Center and clamp the grid under the intro */
 .grid__wrapper.publications-grid{
-  max-width:720px;        /* match .wordwrap */
-  margin:0 auto 1rem;     /* centers the grid */
-  gap:.75rem;
+  max-width: 1024px;         /* was 720px */
+  margin: 0 auto 1rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  justify-items: center;
 }
 
-/* Smaller, consistent teaser box */
-.publications-grid .archive__item-teaser{ height:120px; margin:0 0 .5rem 0; }
+/* slightly taller teaser to balance the wider cards */
+.publications-grid .archive__item-teaser{ height: 150px; }
 .publications-grid .archive__item-teaser img{
-  width:100% !important; height:100% !important; object-fit:contain; display:block;
+  width: 100% !important; height: 100% !important; object-fit: contain; display:block;
 }
-
-/* Trim bottom whitespace on this page */
-.publications-page .page__inner-wrap,
-.publications-page .page__content{ padding-bottom:0; margin-bottom:0; }
 </style>
 
 
