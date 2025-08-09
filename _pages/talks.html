@@ -47,6 +47,14 @@ classes: publications-page   # ← add this
 </style>
 
 
+{% if site.author.googlescholar %}
+  <div class="wordwrap">
+  I am currently working the following projects as part of my thesis. I am also working on many other side projects related to connectome-constrained modeling, dynamical variational autoencoder and theoretical neuroscience which I am happy to connect and discuss!
+  </div>
+{% endif %}
+
+{% include base_path %}
+
 <div class="grid__wrapper publications-grid">
   {% for post in site.talks reversed %}
     {% include archive-single-talk.html type="grid" %}
