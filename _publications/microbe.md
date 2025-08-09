@@ -15,4 +15,4 @@ A longstanding mystery in the anaerobic bacteria Listeria Monocytogenes, one of 
   <em>Figure 1. Extracellular Electron Transfer Mechanism.</em>
 </p>
 
-[^1]: Light, S. et al. *PNAS* (2019).
+[^1]: Light, S. et al. *PNAS* (2019). (https://doi.org/10.1073/pnas.1915678116). 
