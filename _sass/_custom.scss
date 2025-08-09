@@ -1,23 +1,14 @@
-/* 1) One card per row on archive grids */
-.archive .grid__item {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* 2) Show the whole teaser image (disable theme crop) */
-.archive .archive__item-teaser {
-  max-height: none !important;
-  overflow: visible !important;
-}
-.archive .archive__item-teaser img {
+/* Make list teasers behave nicely */
+.archive .list__item .archive__item-teaser img {
   width: 100%;
   height: auto;
-  object-fit: contain; /* no cropping */
+  object-fit: contain;
 }
 
-/* 3) Make sure archive text is left aligned */
+/* Optional: reduce gap under the teaser */
+.archive .list__item .archive__item-teaser { margin-bottom: 0.5rem; }
+
+/* Keep text left-aligned in archives */
 .archive .archive__item,
 .archive .archive__item-title,
-.archive .archive__item-excerpt {
-  text-align: left;
-}
+.archive .archive__item-excerpt { text-align: left; }
