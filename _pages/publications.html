@@ -41,6 +41,60 @@ classes: publications-page   # ← add this
 
 
 
+<style>
+/* Wider intro to match the grid */
+.wordwrap { max-width: 1100px; margin: 0 auto .75rem; }
+
+/* Centered, roomy 3-up layout using flex (more forgiving than the theme grid) */
+.grid__wrapper.publications-grid{
+  max-width: 1100px;
+  margin: 0 auto 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+/* Make each card actually fill a decent column width */
+.grid__wrapper.publications-grid > *{         /* catches .grid__item from the include */
+  flex: 1 1 340px;                            /* min column ~340px; grows as space allows */
+  max-width: 1px;                             /* lets flex grow evenly; prevents “auto” shrink quirks */
+}
+
+/* Ensure the article stretches within its flex item */
+.publications-grid .archive__item{ width: 100%; }
+
+/* Teaser box size */
+.publications-grid .archive__item-teaser{
+  height: 160px;                              /* adjust to taste */
+  margin: 0 0 .6rem 0;
+}
+.publications-grid .archive__item-teaser img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;                        /* use 'cover' for cropped fill */
+  display: block;
+}
+
+/* Titles/excerpts should wrap normally (no ultra-narrow columns) */
+.publications-grid .archive__item-title,
+.publications-grid .archive__item-excerpt{
+  width: 100%;
+  max-width: none;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;                    /* long words still wrap */
+}
+
+/* Responsive: drop to 2 and 1 columns naturally via flex-basis */
+@media (max-width: 900px){
+  .grid__wrapper.publications-grid{ gap: 1rem; }
+  .grid__wrapper.publications-grid > *{ flex-basis: 320px; }
+}
+@media (max-width: 680px){
+  .grid__wrapper.publications-grid > *{ flex-basis: 100%; }
+}
+</style>
 
 
 {% if site.author.googlescholar %}
