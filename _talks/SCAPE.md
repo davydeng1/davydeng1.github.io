@@ -11,7 +11,7 @@ In order to replicate the whole brain in silico, neural recording needs to be hi
 
 
 <p align="center">
-  <img src="/images/scape.jpeg" alt="SCAPE" width="420">
+  <img src="/images/SCAPE.jpeg" alt="SCAPE" width="420">
   <br>
   <em>Figure 1. Oblique Planar Light Sheet Microscopy.</em>
 </p>
