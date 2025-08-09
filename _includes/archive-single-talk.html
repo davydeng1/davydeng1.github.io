@@ -15,12 +15,9 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
 
-    {# show image in BOTH grid and list #}
-    {% if teaser and (include.type == "grid" or include.type == "list") %}
+    {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
-        <img
-          src={% if teaser contains "://" %}"{{ teaser }}"{% else %}"{{ teaser | prepend: "/images/" | prepend: base_path }}"{% endif %}
-          alt="">
+        <img src={% if teaser contains "://" %}"{{ teaser }}"{% else %}"{{ teaser | prepend: "/images/" | prepend: base_path }}"{% endif %} alt="">
       </div>
     {% endif %}
 
@@ -30,7 +27,7 @@
 
     {% if post.venue %}
       <p class="archive__item-excerpt" itemprop="description">
-        {{ post.type }} at {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}
+        {{ post.type }}{% if post.venue %} at {{ post.venue }}{% endif %}{% if post.location %}, {{ post.location }}{% endif %}
       </p>
     {% endif %}
 
@@ -38,6 +35,12 @@
       <p class="archive__item-excerpt" itemprop="description">
         {{ post.excerpt | markdownify | strip_html | truncate: 220 }}
       </p>
+    {% endif %}
+
+    {% if include.type == "list" and teaser %}
+      <div class="archive__item-teaser" style="margin-top: .5rem;">
+        <img src={% if teaser contains "://" %}"{{ teaser }}"{% else %}"{{ teaser | prepend: "/images/" | prepend: base_path }}"{% endif %} alt="">
+      </div>
     {% endif %}
 
   </article>
