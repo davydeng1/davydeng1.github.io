@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% if page.section == "research" %}
+  {% assign back_href = "/#research" %}
+  {% assign back_label = "Ongoing Research" %}
+{% else %}
+  {% assign back_href = "/#publications" %}
+  {% assign back_label = "Publications" %}
+{% endif %}
+
+<div class="topbar">
+  <a class="back" href="{{ back_href | relative_url }}">← {{ back_label }}</a>
+  <a class="home" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+</div>
+
+<article class="article">
+  <span class="eyebrow">{{ page.eyebrow }}</span>
+  <h1>{{ page.title }}</h1>
+  <div class="article-meta">{{ page.meta }}</div>
+
+  <figure>
+    <div class="figwell">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.caption | strip_html }}">
+    </div>
+    <figcaption>{{ page.caption }}</figcaption>
+  </figure>
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+
+  {% if page.reference %}
+  <div class="article-ref">{{ page.reference }}</div>
+  {% endif %}
+</article>

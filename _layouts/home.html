@@ -1,0 +1,148 @@
+---
+layout: default
+---
+{% assign research = site.projects | where: "section", "research" | sort: "order" %}
+{% assign pubs = site.projects | where: "section", "publications" | sort: "order" %}
+<div class="wrap">
+
+  <!-- ================= LEFT STICKY RAIL ================= -->
+  <aside class="rail">
+    <div>
+      <div class="avatar">
+        <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
+      </div>
+      <div class="rail-name">{{ site.author.name }}</div>
+      <div class="rail-pronoun">{{ site.author.pronouns }}</div>
+      <div class="rail-role">Ph.D. Candidate<br>Harvard–MIT HST</div>
+    </div>
+
+    <nav class="nav">
+      <a href="#about" class="navlink" data-target="#about"><span class="dash"></span>About</a>
+      <a href="#research" class="navlink" data-target="#research"><span class="dash"></span>Ongoing Research</a>
+      <a href="#publications" class="navlink" data-target="#publications"><span class="dash"></span>Publications</a>
+      <a href="#beyond" class="navlink" data-target="#beyond"><span class="dash"></span>Beyond Research</a>
+      <a href="#contact" class="navlink" data-target="#contact"><span class="dash"></span>Contact</a>
+    </nav>
+
+    <div class="rail-foot">
+      <div class="loc">{{ site.author.location }}</div>
+      <div><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
+      <div class="rail-links">
+        <a href="{{ site.author.googlescholar }}">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
+        <a href="#contact">CV</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN COLUMN ================= -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <canvas id="connectome"></canvas>
+      <div class="hero-scrim"></div>
+      <div class="hero-inner">
+        <div class="hero-eyebrow">MIT PhD Student · Boyden Lab, Harvard–MIT HST</div>
+        <h1>Emulating the brain, starting with <em>C.&nbsp;elegans</em>.</h1>
+        <p class="hero-sub">I develop technologies toward whole brain emulation — the reconstruction of a mind <em>in silico</em>. I choose to focus my energy on <em>C. elegans</em> because it is an important and tractable first step, and can serve as a groundtruth to evaluate the right approach for scaling up to mammalian and human WBE in the future.</p>
+        <div class="worm-marker">
+          <svg width="108" height="26" viewBox="0 0 108 26" fill="none" style="overflow:visible">
+            <path d="M5 13 C 24 1, 36 25, 54 13 S 86 3, 100 13" stroke="#b56a3f" stroke-width="2" stroke-linecap="round"></path>
+            <circle cx="100" cy="13" r="2.6" fill="#b56a3f"></circle>
+          </svg>
+          <div class="worm-label">
+            <span class="sp">C. elegans</span>
+            <span class="n"><b>302</b> neurons</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="eyebrow-row"><span class="eyebrow">About</span><span class="rule"></span></div>
+      <div class="prose">
+        <p>I am a third-year joint doctoral student in the <a href="https://hst.mit.edu/">Harvard–MIT Health Sciences and Technology (HST)</a> program and a trainee in the <a href="https://hst.mit.edu/academic-programs/memp/neuroimaging-training-program">Neuroimaging Training Program</a> as a <a href="https://engineering.mit.edu/students/graduate-student-fellowships/mathworks-fellows/">MathWorks Fellow</a> at MIT, where I am fortunate to be co-advised by <a href="https://synthneuro.org/">Prof. Ed Boyden</a> and <a href="https://klab.tch.harvard.edu/">Prof. Gabriel Kreiman</a>. As a PhD minor, I am also part of the <a href="https://hsph.harvard.edu/degrees-and-programs/concentrations/humanitarian-studies-concentration/">Humanitarian Studies Concentration</a> at the <a href="https://hsph.harvard.edu/">Harvard T.H. Chan School of Public Health</a>.</p>
+        <p>Most of my time is spent developing various technologies toward whole brain emulation (WBE). My research is multi-disciplinary, spanning chemistry, physics, neuroscience and computation. I choose to focus on <em>C. elegans</em> because it is an important and tractable first step and can serve as a groundtruth to evaluate the right approach for scaling up to mammalian and human WBE in the future.</p>
+        <p>Previously, I received a B.S. in chemistry, a B.A. in genetics and genomics, and a B.A. in psychology from the <a href="https://www.berkeley.edu/">University of California, Berkeley</a>, where I worked with <a href="https://mcb.berkeley.edu/labs/portnoy/">Prof. Dan Portnoy</a> on the biochemical mechanisms of oxygen-dependent intracellular replication in anaerobic pathogens as a <a href="https://bsp.berkeley.edu/">BSP Research Fellow</a> supported by the Hellman Foundation. I then received an S.M. in computational biology from <a href="https://hsph.harvard.edu/program/sm-computational-biology-quantitative-genetics/">Harvard University</a>, working with <a href="https://beroukhimlab.org/team/rameen-beroukhim/">Prof. Rameen Beroukhim</a> as a <a href="https://pointfoundation.org/scholarships/flagship">Point Foundation Scholar</a> and a <a href="https://worldwide.harvard.edu/sinclair-kennedy-traveling-fellowships">Sinclair Kennedy Fellow</a>.</p>
+      </div>
+      <div class="chips">
+        <span class="chip">PhD · Harvard–MIT HST</span>
+        <span class="chip">S.M. · Harvard, Comp Bio</span>
+        <span class="chip">B.S./B.A. ×3 · UC Berkeley</span>
+      </div>
+    </section>
+
+    <!-- ONGOING RESEARCH -->
+    <section id="research" class="section">
+      <div class="eyebrow-row"><span class="eyebrow">Ongoing Research</span><span class="rule"></span></div>
+      <p class="section-intro prose">These are the core projects of my thesis. I am also pursuing side projects on connectome-constrained modeling, dynamical variational autoencoders, tardigrade ExFISH and expansion cryomicrotomy — always happy to connect and discuss.</p>
+      <div class="rgrid">
+        {% for p in research %}
+        <a href="{{ p.url | relative_url }}" class="rcard">
+          <div class="well"><img src="{{ p.image | relative_url }}" alt="{{ p.card_title | strip_html }}"></div>
+          <div class="idx">{{ p.order | prepend: '0' | slice: -2, 2 }} · {{ p.category }}</div>
+          <div class="rtitle">{{ p.card_title }}</div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="eyebrow-row"><span class="eyebrow">Publications &amp; Completed Research</span><span class="rule"></span></div>
+      <p class="section-intro prose">A summary of studies I have contributed to. My complete article list lives on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
+      <div class="plist">
+        {% for p in pubs %}
+        <a href="{{ p.url | relative_url }}" class="pcard">
+          <div class="well"><img src="{{ p.image | relative_url }}" alt="{{ p.card_title | strip_html }}"></div>
+          <div>
+            <div class="rtitle">{{ p.card_title }}</div>
+            <div class="cite">{{ p.citation }}</div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- BEYOND RESEARCH -->
+    <section id="beyond" class="section">
+      <div class="eyebrow-row"><span class="eyebrow">Beyond Research</span><span class="rule"></span></div>
+      <p class="section-intro" style="color:var(--body)">Outside of science, I am devoted to social impact, community building, humanitarian medicine and biotech entrepreneurship — and to questions of foresight and intergenerational fairness amid rapid technological change.</p>
+      <div class="beyond-grid prose">
+        <div class="beyond-item">
+          <span class="beyond-tag">WEF</span>
+          <div><div class="beyond-title">Davos50 Delegate &amp; Future50 Foresight Fellow</div><div class="beyond-desc">Global Shapers Community &amp; Global Foresight Network, World Economic Forum.</div></div>
+        </div>
+        <div class="beyond-item">
+          <span class="beyond-tag">BIO</span>
+          <div><div class="beyond-title">Nucleate — Co-Managing Director, Boston</div><div class="beyond-desc">A student-run biotech startup incubator.</div></div>
+        </div>
+        <div class="beyond-item">
+          <span class="beyond-tag">MIT</span>
+          <div><div class="beyond-title">GFLI@MIT — Co-Founder &amp; Co-President</div><div class="beyond-desc">MIT's first support network for first-generation, low-income graduate students.</div></div>
+        </div>
+        <div class="beyond-item">
+          <span class="beyond-tag">TALK</span>
+          <div><div class="beyond-title"><a href="https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2025/sessions/generation-uncertain/">Generation Uncertain</a></div><div class="beyond-desc">Panel on intergenerational fairness, Davos 2025 Annual Meeting.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="eyebrow" style="margin-bottom:26px">Contact</div>
+      <h2>I'd love to talk about brains, imaging, science, or more.</h2>
+      <div class="contact-links">
+        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        <a href="{{ site.author.googlescholar }}">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
+      </div>
+      <div class="copyright">© 2026 {{ site.author.name }} · {{ site.author.location }}</div>
+    </section>
+
+  </main>
+</div>
+
+<script src="{{ '/assets/js/connectome.js' | relative_url }}"></script>
