@@ -16,6 +16,7 @@
   --muted-3: #7c776d;
   /* accents */
   --terra: #b56a3f;
+  --accent: var(--terra);
   --blue: #4a6ca4;
   --blue-hover: #3f6197;
   /* hairlines (ink at alpha) */
@@ -149,11 +150,26 @@ img { max-width: 100%; }
   font-family: var(--serif); font-weight: 300; font-size: 21px;
   line-height: 1.6; margin: 0; color: var(--muted); max-width: 60ch;
 }
-.worm-marker { display: flex; align-items: center; gap: 18px; margin-top: 40px; }
-.worm-label { display: flex; flex-direction: column; line-height: 1.25; }
-.worm-label .sp { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--muted); }
-.worm-label .n { font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted-2); }
-.worm-label .n b { color: var(--ink); font-weight: 400; }
+.worm-fig { margin: 52px 0 0; max-width: 660px; }
+.worm-fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+.worm-fig .wf-label {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  letter-spacing: 1.6px;
+  fill: var(--muted-2);
+}
+.worm-fig figcaption {
+  margin-top: 24px;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--muted-2);
+}
+.worm-fig figcaption em { font-style: italic; color: var(--ink); }
+@media (max-width: 720px) {
+  .worm-fig { margin-top: 36px; }
+  .worm-fig .wf-label { font-size: 16px; }
+}
 
 /* prose */
 .prose {

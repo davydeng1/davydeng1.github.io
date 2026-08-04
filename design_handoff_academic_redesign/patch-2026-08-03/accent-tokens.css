@@ -1,0 +1,66 @@
+/* ============================================================
+   PATCH — accent theming + C. elegans hero figure
+   Append to assets/css/style.css (or merge into the token block).
+   ============================================================ */
+
+/* ---------- 1. Accent as a single swappable token ---------- */
+/* Default theme. Swap by setting data-accent on <html>. */
+:root {
+  --accent:        #b56a3f;   /* terracotta */
+  --accent-soft:   rgba(181, 106, 63, 0.22);
+  /* rgb triplets consumed by connectome.js */
+  --accent-rgb:        196, 116, 78;
+  --accent-rgb-mid:    214, 150, 108;
+  --accent-rgb-bright: 224, 164, 120;
+  --accent-rgb-glow:   212, 140, 96;
+  --accent-rgb-hot:    204, 128, 84;
+}
+
+html[data-accent="navy"] {
+  --accent:        #2f4d80;
+  --accent-soft:   rgba(47, 77, 128, 0.22);
+  --accent-rgb:        42, 72, 130;
+  --accent-rgb-mid:    62, 98, 160;
+  --accent-rgb-bright: 96, 134, 198;
+  --accent-rgb-glow:   70, 105, 175;
+  --accent-rgb-hot:    52, 88, 152;
+}
+
+html[data-accent="sage"] {
+  --accent:        #5f7f62;
+  --accent-soft:   rgba(95, 127, 98, 0.22);
+  --accent-rgb:        96, 133, 100;
+  --accent-rgb-mid:    118, 158, 120;
+  --accent-rgb-bright: 148, 186, 148;
+  --accent-rgb-glow:   124, 162, 126;
+  --accent-rgb-hot:    110, 146, 112;
+}
+
+/* Keep the old name working, then delete --terra usages over time. */
+:root { --terra: var(--accent); }
+
+/* ---------- 2. Hero figure ---------- */
+.worm-fig { margin: 52px 0 0; max-width: 660px; }
+.worm-fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+.worm-fig .wf-label {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  letter-spacing: 1.6px;
+  fill: var(--muted-2);
+}
+.worm-fig figcaption {
+  margin-top: 24px;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--muted-2);
+}
+.worm-fig figcaption em { font-style: italic; color: var(--ink); }
+
+@media (max-width: 720px) {
+  .worm-fig { margin-top: 36px; }
+  .worm-fig .wf-label { font-size: 16px; } /* stays legible when scaled down */
+}
+
+/* ---------- 3. Delete these old rules ---------- */
+/* .worm-marker, .worm-label, .worm-label .sp, .worm-label .n, .worm-label .n b */
