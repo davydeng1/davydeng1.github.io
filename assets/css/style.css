@@ -137,7 +137,8 @@ img { max-width: 100%; }
     linear-gradient(0deg, rgba(250,248,243,1) 0%, rgba(250,248,243,0) 22%);
 }
 .hero-inner { position: relative; z-index: 2; pointer-events: none; }
-.hero-inner a { pointer-events: auto; }
+.hero-inner a,
+.hero-eyebrow, .hero h1, .hero-sub, .worm-fig figcaption { pointer-events: auto; }
 .hero-eyebrow {
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--terra); margin-bottom: 22px;
