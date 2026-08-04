@@ -1,0 +1,23 @@
+current directory: /Users/clairebookworm/Documents/github/davydeng1.github.io/.gems/gems/strscan-3.1.8/ext/strscan
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+checking for onig_region_memsize(NULL)... no
+checking for rb_reg_onig_match() in ruby/re.h... yes
+checking for rb_deprecate_constant()... yes
+checking for rb_gc_location() in ruby.h... yes
+checking for RUBY_TYPED_EMBEDDABLE in ruby.h... yes
+creating Makefile
+
+current directory: /Users/clairebookworm/Documents/github/davydeng1.github.io/.gems/gems/strscan-3.1.8/ext/strscan
+make -j13 DESTDIR\= sitearchdir\=./.gem.20260803-1598-l0u5ji sitelibdir\=./.gem.20260803-1598-l0u5ji clean
+
+current directory: /Users/clairebookworm/Documents/github/davydeng1.github.io/.gems/gems/strscan-3.1.8/ext/strscan
+make -j13 DESTDIR\= sitearchdir\=./.gem.20260803-1598-l0u5ji sitelibdir\=./.gem.20260803-1598-l0u5ji
+compiling strscan.c
+linking shared-object strscan.bundle
+
+current directory: /Users/clairebookworm/Documents/github/davydeng1.github.io/.gems/gems/strscan-3.1.8/ext/strscan
+make -j13 DESTDIR\= sitearchdir\=./.gem.20260803-1598-l0u5ji sitelibdir\=./.gem.20260803-1598-l0u5ji install
+/usr/bin/install -c -m 0755 strscan.bundle ./.gem.20260803-1598-l0u5ji
+
+current directory: /Users/clairebookworm/Documents/github/davydeng1.github.io/.gems/gems/strscan-3.1.8/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20260803-1598-l0u5ji sitelibdir\=./.gem.20260803-1598-l0u5ji clean
