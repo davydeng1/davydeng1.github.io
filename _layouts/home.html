@@ -2,7 +2,6 @@
 layout: default
 ---
 {% assign research = site.projects | where: "section", "research" | sort: "order" %}
-{% assign pubs = site.projects | where: "section", "publications" | sort: "order" %}
 <div class="wrap">
 
   <!-- ================= LEFT STICKY RAIL ================= -->
@@ -130,18 +129,7 @@ layout: default
     <!-- PUBLICATIONS -->
     <section id="publications" class="section">
       <div class="eyebrow-row"><span class="eyebrow">Publications &amp; Completed Research</span><span class="rule"></span></div>
-      <p class="section-intro prose">A summary of studies I have contributed to. My complete article list lives on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
-      <div class="plist">
-        {% for p in pubs %}
-        <a href="{{ p.url | relative_url }}" class="pcard">
-          <div class="well"><img src="{{ p.image | relative_url }}" alt="{{ p.card_title | strip_html }}"></div>
-          <div>
-            <div class="rtitle">{{ p.card_title }}</div>
-            <div class="cite">{{ p.citation }}</div>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
+      <p class="section-intro prose">My complete article list lives on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
     </section>
 
     <!-- BEYOND RESEARCH -->
@@ -150,32 +138,20 @@ layout: default
       <p class="section-intro" style="color:var(--body)">Outside of science, I am devoted to social impact, community building, humanitarian medicine and biotech entrepreneurship — and to questions of foresight and intergenerational fairness amid rapid technological change.</p>
       <div class="beyond-grid prose">
         <div class="beyond-item">
-          <span class="beyond-tag">WEF</span>
-          <div><div class="beyond-title">Davos50 Delegate &amp; Future50 Foresight Fellow</div><div class="beyond-desc">Global Shapers Community &amp; Global Foresight Network, World Economic Forum.</div></div>
-        </div>
-        <div class="beyond-item">
-          <span class="beyond-tag">BIO</span>
-          <div><div class="beyond-title">Nucleate — Co-Managing Director, Boston</div><div class="beyond-desc">A student-run biotech startup incubator.</div></div>
-        </div>
-        <div class="beyond-item">
-          <span class="beyond-tag">MIT</span>
-          <div><div class="beyond-title">GFLI@MIT — Co-Founder &amp; Co-President</div><div class="beyond-desc">MIT's first support network for first-generation, low-income graduate students.</div></div>
-        </div>
-        <div class="beyond-item">
-          <span class="beyond-tag">TALK</span>
-          <div><div class="beyond-title"><a href="https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2025/sessions/generation-uncertain/">Generation Uncertain</a></div><div class="beyond-desc">Panel on intergenerational fairness, Davos 2025 Annual Meeting.</div></div>
-        </div>
-        <div class="beyond-item">
-          <span class="beyond-tag">TALK</span>
-          <div><div class="beyond-title"><a href="https://www.youtube.com/watch?v=gyDwkCBKsyY">What does mind-uploading actually require?</a></div><div class="beyond-desc">TEDxMIT talk on what whole brain emulation demands.</div></div>
+          <span class="beyond-tag">ESSAY</span>
+          <div><div class="beyond-title"><a href="https://www.weforum.org/stories/technological-innovation/fly-brain-video-science-attention/">What viral fly-brain videos reveal about science in the attention economy</a></div><div class="beyond-desc">With Eric Yao, for the <em>World Economic Forum</em>, September 2026.</div></div>
         </div>
         <div class="beyond-item">
           <span class="beyond-tag">PRESS</span>
           <div><div class="beyond-title"><a href="https://www.forbes.com/sites/johnwerner/2026/07/31/uploading-your-brain-what-will-it-take/">Uploading Your Brain: What Will It Take?</a></div><div class="beyond-desc">Featured in <em>Forbes</em>, July 2026.</div></div>
         </div>
         <div class="beyond-item">
-          <span class="beyond-tag">ESSAY</span>
-          <div><div class="beyond-title"><a href="https://www.weforum.org/stories/technological-innovation/fly-brain-video-science-attention/">What viral fly-brain videos reveal about science in the attention economy</a></div><div class="beyond-desc">With Eric Yao, for the <em>World Economic Forum</em>, September 2026.</div></div>
+          <span class="beyond-tag">TALK</span>
+          <div><div class="beyond-title"><a href="https://www.youtube.com/watch?v=gyDwkCBKsyY">What does mind-uploading actually require?</a></div><div class="beyond-desc">TEDxMIT talk on what whole brain emulation demands.</div></div>
+        </div>
+        <div class="beyond-item">
+          <span class="beyond-tag">TALK</span>
+          <div><div class="beyond-title"><a href="https://www.weforum.org/meetings/world-economic-forum-annual-meeting-2025/sessions/generation-uncertain/">Generation Uncertain</a></div><div class="beyond-desc">Panel on intergenerational fairness, Davos 2025 Annual Meeting.</div></div>
         </div>
       </div>
     </section>
