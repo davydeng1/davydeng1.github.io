@@ -18,6 +18,34 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@davyneuro">
   <meta name="twitter:creator" content="@davyneuro">
+{% if page.layout == 'home' %}
+  <!-- Person / ProfilePage structured data (homepage only) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": {{ site.author.name | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }},
+      "image": {{ site.author.avatar | absolute_url | jsonify }},
+      "jobTitle": "Ph.D. Candidate",
+      "description": {{ doc_desc | jsonify }},
+      "affiliation": [
+        { "@type": "Organization", "name": "Harvard\u2013MIT Health Sciences and Technology", "url": "https://hst.mit.edu/" },
+        { "@type": "Organization", "name": "Massachusetts Institute of Technology", "url": "https://www.mit.edu/" }
+      ],
+      "sameAs": [
+        {{ site.author.googlescholar | jsonify }},
+        {{ site.author.linkedin | prepend: 'https://www.linkedin.com/in/' | jsonify }},
+        {{ site.author.substack | jsonify }},
+        {{ site.author.medium | jsonify }},
+        {{ site.author.twitter | jsonify }}
+      ]
+    }
+  }
+  </script>
+{% endif %}
   <meta name="twitter:title" content="{{ doc_title }}">
   <meta name="twitter:description" content="{{ doc_desc }}">
 
